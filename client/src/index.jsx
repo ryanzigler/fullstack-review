@@ -10,28 +10,22 @@ class App extends React.Component {
     this.state = {
       repos: []
     }
-
   }
 
-  componentDidMount() {
-    $.ajax({
-      url: 'http://localhost:1128/repos',
-      method: 'GET',
-      success: data => { this.setState({repos: data}); },
-      error: () => console.log('GET error!')
-    });
-  }
-
+  /* This should send the input username as AJAX POST request to the server using JQUERY */
   search (term) {
-    //console.log(`${term} was searched`);
-    $.ajax({
-      method: "POST",
-      url: 'http://localhost:1128/repos',
-      contentType: 'text/plain',
-      data: term,
+    $.post('/repos', {
+      headers: {'contentType': 'application/json'},
+      data: {username: term},
       success: () => { this.componentDidMount() },
-      error: () => console.log('error in POST')
     });
+  }
+
+  /* This should send an AJAX GET request to the server for the top 25 repos in the database using JQUERY */
+  componentDidMount() {
+    $.get('/repos', (data) => {
+      this.setState({repos: data})
+    })
   }
 
   render () {

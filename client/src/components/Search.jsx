@@ -18,6 +18,7 @@ class Search extends React.Component {
     this.props.onSearch(this.state.term);
   }
 
+  /* Must bind(this) to the browser eventhandler */
   render() {
     return (<div>
       <h4>Add more repos!</h4>
