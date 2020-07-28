@@ -10,10 +10,10 @@ db.once('open', function() {
 
 let repoSchema = mongoose.Schema({
   id: Number,
-  username: String,
-  repoName: String,
-  stars: Number,
-  url: String
+  owner_login: String,
+  name: String,
+  stargazers_count: Number,
+  html_url: String
 });
 
 let Repo = mongoose.model('Repo', repoSchema);
@@ -21,10 +21,10 @@ let Repo = mongoose.model('Repo', repoSchema);
 let save = (repo) => {
   const newRepo = new Repo({
     id: repo.id,
-    username: repo.username,
-    repo: repo.repoName,
-    stars: repo.stars,
-    url: repo.url
+    owner_login: repo.owner.login,
+    name: repo.name,
+    stargazers_count: repo.stargazers_count,
+    html_url: repo.html_url
   }).save((err, data) => {
     if (err) {
       console.log(err, 'Error saving data');
