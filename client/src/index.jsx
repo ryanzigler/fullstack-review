@@ -13,15 +13,15 @@ class App extends React.Component {
   }
 
   /* This should send the input username as AJAX POST request to the server using JQUERY */
-  async search (term) {
-    await $.post('/repos', {
+  search (term) {
+    $.post('/repos', {
       headers: {'contentType': 'application/json'},
       data: {username: term},
-      success: () => { this.renderPage() },
+      success: () => { this.renderRepos() },
     });
   }
 
-  renderPage() {
+  renderRepos() {
     $.get('/repos', (data) => {
       this.setState({repos: data})
     })
@@ -29,7 +29,7 @@ class App extends React.Component {
 
   /* This should send an AJAX GET request to the server for the top 25 repos in the database using JQUERY */
   componentDidMount() {
-    this.renderPage();
+    this.renderRepos();
   }
 
   render () {
@@ -40,6 +40,5 @@ class App extends React.Component {
     </div>)
   }
 }
-
 
 ReactDOM.render(<App />, document.getElementById('app'));
