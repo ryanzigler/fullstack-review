@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "react-dev": "webpack -d --watch",
-    "server-dev": "nodemon server/index.js"
+    "server-dev": "nodemon server/index.js",
+    "postinstall": "npm run build",
+    "start": "node server/index.js"
   },
   "author": "Beth Johnson",
   "license": "ISC",
@@ -23,7 +25,8 @@
     "jquery": "^3.1.1",
     "mongoose": "^4.13.21",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "webpack": "^2.2.1"
   },
   "engines": {
     "node": "12.18.2"
