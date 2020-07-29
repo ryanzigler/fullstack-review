@@ -1,5 +1,5 @@
 const axios = require('axios');
-const config = require('../config.js');
+//const config = require('../config.js');
 
 /* This function should send the username input from the client to GitHub's API and return all repos for that username */
 let getReposByUsername = (username) => {
@@ -12,7 +12,7 @@ let getReposByUsername = (username) => {
       url: `https://api.github.com/users/${username}/repos?per_page=150`,
       headers: {
         'User-Agent': 'request',
-        'Authorization': `token ${config.TOKEN}`
+        'Authorization': `token ${process.env.TOKEN}`
       }
     };
 
