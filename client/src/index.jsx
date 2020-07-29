@@ -13,19 +13,23 @@ class App extends React.Component {
   }
 
   /* This should send the input username as AJAX POST request to the server using JQUERY */
-  search (term) {
-    $.post('/repos', {
+  async search (term) {
+    await $.post('/repos', {
       headers: {'contentType': 'application/json'},
       data: {username: term},
-      success: () => { this.componentDidMount() },
+      success: () => { this.renderPage() },
     });
+  }
+
+  renderPage() {
+    $.get('/repos', (data) => {
+      this.setState({repos: data})
+    })
   }
 
   /* This should send an AJAX GET request to the server for the top 25 repos in the database using JQUERY */
   componentDidMount() {
-    $.get('/repos', (data) => {
-      this.setState({repos: data})
-    })
+    this.renderPage();
   }
 
   render () {
