@@ -45,7 +45,7 @@ app.get('/repos', function (req, res) {
 
 // Uncomment the console.log below for port to be displayed on initialization.
 const PORT = process.env.PORT || 3000;
-app.listen(port, function() {
-  console.log(`listening on port ${port}`);
+app.listen(PORT, function() {
+  console.log(`listening on port ${ PORT }`);
 });
 
