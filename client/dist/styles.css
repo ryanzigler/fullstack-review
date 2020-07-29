@@ -1,0 +1,68 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 800;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table {
+  width: 50%;
+  border-spacing: 0;
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th, td {
+  text-align: left;
+  padding: 7px;
+}
+
+th {
+  font-weight: 700;
+}
+
+tr:nth-child(even) {
+  background-color: #e3dfde;
+}
+
+h4 {
+  font-size: 1.5em;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+input {
+  display: block;
+  margin: 0 auto;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  background-color: #575759;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+

@@ -1,9 +1,19 @@
 import React from 'react';
+import RowView from './RowView.jsx'
 
 const RepoList = (props) => (
   <div>
-    <h4> Repo List Component </h4>
-    There are {props.repos.length} repos.
+    <h2> Top {props.repos.length} Starred Repos on GitHub </h2>
+    <table>
+      <tbody>
+        <tr>
+          <th>Stars</th>
+          <th>Repository</th>
+          <th>User</th>
+        </tr>
+        {props.repos.map(repo => < RowView key={ repo._id } repo={repo} />)}
+      </tbody>
+    </table>
   </div>
 )
 

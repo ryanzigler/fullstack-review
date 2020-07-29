@@ -21,8 +21,8 @@ class Search extends React.Component {
   /* Must bind(this) to the browser eventhandler */
   render() {
     return (<div>
-      <h4>Add more repos!</h4>
-      Enter a github username: <input value={this.state.terms} onChange={this.onChange.bind(this)}/>
+      <h2>Add more repos!</h2>
+      <h4>Enter a github username:</h4> <input value={this.state.terms} onChange={this.onChange.bind(this)}/>
       <button onClick={this.search.bind(this)}> Add Repos </button>
     </div>)
   }

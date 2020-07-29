@@ -44,7 +44,10 @@ app.get('/repos', function (req, res) {
 
 
 // Uncomment the console.log below for port to be displayed on initialization.
-let port = 1128;
+let port = process.env.PORT;
+if (port === null || port === '') {
+  port = 1128;
+}
 app.listen(port, function() {
   //console.log(`listening on port ${port}`);
 });
